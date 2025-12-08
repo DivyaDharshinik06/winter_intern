@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Divya Dharshini — Portfolio</title>
+  <meta name="description" content="Portfolio — Projects, skills and contact" />
+
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#9aa6b2;
+      --accent:#7dd3fc; /* light cyan */
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxw:1100px;
+      --ff: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--ff);
+      background:linear-gradient(180deg,#071020 0%, #071427 60%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    .container{max-width:var(--maxw);margin:40px auto;padding:24px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);
+      display:flex;align-items:center;justify-content:center;color:#012; font-weight:700;
+    }
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    nav a:hover{color:var(--accent)}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start;margin-bottom:28px
+    }
+    .card{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+
+    .intro h1{margin:0 0 6px 0;font-size:28px}
+    .intro p{color:var(--muted);margin:0 0 14px}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#022;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn.ghost{background:transparent;border:1px solid rgba(125,211,252,0.12);color:var(--accent)}
+
+    .profile{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+    .avatar{width:160px;height:160px;border-radius:20px;background:linear-gradient(180deg,#0ea5e9,#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:800;color:#012;font-size:44px}
+    .small{color:var(--muted);font-size:14px}
+
+    /* Projects grid */
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .project{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));}
+    .project h3{margin:0 0 8px;font-size:16px}
+    .project p{color:var(--muted);margin:0 0 12px;font-size:14px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:var(--glass);color:var(--muted)}
+
+    .skills{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .skill{padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.02);color:var(--muted);font-weight:600}
+
+    footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .projects{grid-template-columns:repeat(2,1fr)}
+      .container{padding:18px}
+    }
+    @media (max-width:620px){
+      .projects{grid-template-columns:1fr}
+      .logo{width:48px;height:48px}
+      .avatar{width:120px;height:120px;font-size:34px}
+    }
+
+    /* simple utility */
+    .muted{color:var(--muted)}
+    a.inline{color:var(--accent);text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">DD</div>
+        <div>
+          <div style="font-weight:700">Divya Dharshini</div>
+          <div class="small">Cybersecurity student • Web & ML projects</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card intro">
+        <h1>Hi — I'm Divya. I build security tools and web projects.</h1>
+        <p>Student of Cybersecurity at Sri Eshwar College. I like building practical ML tools for security, small websites, and end-to-end projects you can run locally.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn ghost" href="#contact">Hire / Contact</a>
+        </div>
+
+        <div id="about" style="margin-top:20px">
+          <h2 style="font-size:18px;margin-bottom:8px">About</h2>
+          <p class="muted">Currently focused on hybrid intrusion detection, OTP fraud detection, and phishing detection projects. Comfortable with Python, HTML/CSS, and basic machine learning.</p>
+
+          <h2 style="font-size:18px;margin-top:14px">Skills</h2>
+          <div class="skills">
+            <div class="skill">Python</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">Flask</div>
+            <div class="skill">Network Security</div>
+            <div class="skill">Git</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card profile">
+        <div class="avatar">DD</div>
+        <div style="font-weight:700">Divya Dharshini</div>
+        <div class="small">Cybersecurity | ML | Web</div>
+        <div style="margin-top:10px">
+          <a class="btn" href="#contact">Email me</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" class="card" style="margin-bottom:18px">
+      <h2 style="margin-top:0">Selected projects</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>Hybrid Intrusion Detection System</h3>
+          <p>Rule-based filtering + deep learning model for network traffic classification. Includes alerting dashboard and sample dataset.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Deep Learning</span><span class="tag">Security</span></div>
+        </article>
+
+        <article class="project">
+          <h3>OTP Fraud Classifier</h3>
+          <p>Text-classifier to detect fraudulent OTP messages using TF-IDF + MultinomialNB with a Flask demo.</p>
+          <div class="tags"><span class="tag">NLP</span><span class="tag">Flask</span><span class="tag">Naive Bayes</span></div>
+        </article>
+
+        <article class="project">
+          <h3>Phishing URL Detector</h3>
+          <p>Feature-engineering on URLs + SVM model and a web interface to classify phishing websites.</p>
+          <div class="tags"><span class="tag">SVM</span><span class="tag">Web</span><span class="tag">Dataset</span></div>
+        </article>
+
+        <article class="project">
+          <h3>Fake Website Detection</h3>
+          <p>Prototype that inspects page features and cert info to flag likely fake pages — useful in browser extension POC.</p>
+          <div class="tags"><span class="tag">Browser POC</span><span class="tag">Security</span></div>
+        </article>
+
+        <article class="project">
+          <h3>Portfolio Website (this page)</h3>
+          <p>Single-file responsive portfolio built with modern layout — copy and edit to personalize.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">Responsive</span></div>
+        </article>
+
+        <article class="project">
+          <h3>CAPTCHA Solver Detector</h3>
+          <p>Heuristics and ML features to detect automated CAPTCHA solving attempts.</p>
+          <div class="tags"><span class="tag">Anti-automation</span><span class="tag">Research</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p class="muted">Want the code, help customizing this page, or collab on a project? Send a message.</p>
+
+      <!-- Simple contact form (no backend) -->
+      <form onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:10px;max-width:640px">
+        <input id="name" placeholder="Your name" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" required />
+        <input id="email" placeholder="Email" type="email" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" required />
+        <textarea id="message" placeholder="Message" rows="5" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" required></textarea>
+        <div style="display:flex;gap:10px">
+          <button class="btn" type="submit">Send</button>
+          <button class="btn ghost" type="button" onclick="copyEmail()">Copy email</button>
+        </div>
+        <div id="note" class="small muted"></div>
+      </form>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Divya Dharshini — Built with ❤️
+    </footer>
+  </div>
+
+  <script>
+    // small interactivity: form shows a fake success message (no backend)
+    function handleSubmit(e){
+      e.preventDefault();
+      const nm = document.getElementById('name').value || 'Friend';
+      document.getElementById('note').textContent = `Thanks ${nm}! This demo form doesn't send messages. To connect, email me at divya@example.com (replace with your real email).`;
+      e.target.reset();
+    }
+    function copyEmail(){
+      navigator.clipboard?.writeText('divya@example.com').then(()=>{
+        document.getElementById('note').textContent = 'Email copied to clipboard.';
+      }).catch(()=>{document.getElementById('note').textContent = 'Unable to copy — please copy manually.'});
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
