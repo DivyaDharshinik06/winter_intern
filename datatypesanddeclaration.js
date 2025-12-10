@@ -314,3 +314,32 @@ console.log(even)
 sum=0
 var total=arr.reduce((Sum,num)=>(sum+num),0);
 console.log(total)
+
+var evenCount=arr.map(num=>num**3).filter(num=>num%2==0).reduce((sum,num)=>sum+1,0);
+console.log(evenCount);
+
+console.log("-------------------------------------------------------------------------------------------------------------------")
+
+var student=[
+    {name:"Dishu",marks:80},
+        {name:"JD",marks:85},
+        {name:"Vikram",marks:75},
+        {name:"Raju",marks:50},
+        {name:"Raj",marks:55},
+        {name:"Rajkiran",marks:68},
+]
+
+var studentMark = student.filter(s=>s.marks>59);
+console.log(studentMark);
+
+//map
+var studentName = student.map(s=>s.name);
+console.log(studentName);
+
+//reduce
+var totlaMarks=student.reduce((sum,s)=>(sum+s.marks),0);
+console.log(totlaMarks);
+
+var avg=totlaMarks/student.length;
+console.log(avg);
+
