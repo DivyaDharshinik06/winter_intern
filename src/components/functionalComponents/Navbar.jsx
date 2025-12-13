@@ -1,13 +1,17 @@
+import State from "./State";
+import Props from "./Props";
+import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <>
             <nav>
-               <ul>
-                     <li>Home</li>
-                     <li>About</li>
-                     <li>Sample Post</li>
-                     <li>Contact</li>
+                <ul>
+                    <li> <Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/Learningreact">LearningReact</Link></li>
+                    <li> <Link to="/Contact">Contact</Link></li>
                 </ul>
+                
             </nav>
             <p>The Above Content is nav</p>
         </>
