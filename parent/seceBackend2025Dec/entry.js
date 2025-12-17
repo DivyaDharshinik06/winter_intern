@@ -5,7 +5,7 @@ const Signup = require("./signup");
 const app = express();
 const port = 8001;
 
-mdb.connect('mongodb://localhost:27017/seceDec2025').then(()=>{
+mdb.connect('mongodb+srv://kdivyadharshini1919_db_user:12345@cluster0.mtzcb6q.mongodb.net/').then(()=>{
     console.log("MongoDB connected");
 }).catch((err)=>{
     console.log("MongoDB error",err);
