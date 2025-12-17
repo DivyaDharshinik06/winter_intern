@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors())
 
 mdb
-  .connect("mongodb+srv://cys:cys@cypersec.h6wsgqg.mongodb.net/seceDec2025")
+  .connect("mongodb+srv://kdivyadharshini1919_db_user:12345@cluster0.mtzcb6q.mongodb.net")
   .then(() => console.log("MongoDB Connection Successful"))
   .catch((err) => console.log("MongoDB Connection Unsuccessful", err));
 
@@ -87,7 +87,7 @@ app.get("/json", (req, res) => {
 
 app.get("/static", (req, res) => {
   res.sendFile(
-    "/Users/prasanthksp/Documents/RAMPeX-Parent-Folder/Trainings/SECE/SECE_MERN_DEC_2025/seceBackend2025Dec/index.html"
+    "parent\seceBackend2025Dec\index.html"
   );
 });
 
