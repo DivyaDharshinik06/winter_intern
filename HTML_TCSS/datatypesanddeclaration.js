@@ -1,4 +1,4 @@
-
+/*
 a=10
 b="SECE"
 c=true
@@ -286,3 +286,60 @@ var demo=()=>{
     },2000)
 }
 demo();
+
+var demo=()=>{
+    setTimeout(()=>{
+ console.log("Processing...")
+    },2000)
+}
+demo();
+console.log("end")
+
+//Template Literals
+var name="Divya";
+var age=20;
+console.log("My name is "+name+" and my age is "+age);
+console.log(`My name is ${name} and my age is ${age}`);
+*/
+//map
+var arr=[1,2,3,4,5]
+var double=arr.map(num=>num*2);
+console.log(double)
+
+//Filter
+var even=arr.filter((num)=>(num%2==0))
+console.log(even)
+
+//Reducer
+sum=0
+var total=arr.reduce((Sum,num)=>(sum+num),0);
+console.log(total)
+
+var evenCount=arr.map(num=>num**3).filter(num=>num%2==0).reduce((sum,num)=>sum+1,0);
+console.log(evenCount);
+
+console.log("-------------------------------------------------------------------------------------------------------------------")
+
+var student=[
+    {name:"Dishu",marks:80},
+        {name:"JD",marks:85},
+        {name:"Vikram",marks:75},
+        {name:"Raju",marks:50},
+        {name:"Raj",marks:55},
+        {name:"Rajkiran",marks:68},
+]
+
+var studentMark = student.filter(s=>s.marks>59);
+console.log(studentMark);
+
+//map
+var studentName = student.map(s=>s.name);
+console.log(studentName);
+
+//reduce
+var totlaMarks=student.reduce((sum,s)=>(sum+s.marks),0);
+console.log(totlaMarks);
+
+var avg=totlaMarks/student.length;
+console.log(avg);
+
