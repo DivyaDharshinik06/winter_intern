@@ -1,49 +1,58 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Auth.css";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    alert(`Logged in as ${email}`);
+  const handleLogin = async (event) => {
+    event.preventDefault();
+
+    try {
+      const req = await axios.post("https://winter-intern.onrender.com/login", {
+        email,
+        password,
+      });
+
+      const { message, isLoggedIn } = req.data;
+
+      if (isLoggedIn) {
+        localStorage.setItem("isLogin", "true");
+        alert(message);
+        navigate("/");
+      }
+    } catch (e) {
+      alert("Login Failed",e);
+    }
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-form">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Email:</label>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Password:</label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit">Login</button>
-        </form>
-        <p style={{textAlign: 'center', marginTop: '20px'}}>
-          Don't have an account? <Link to="/signup" style={{color: '#007bff'}}>Sign Up</Link>
-        </p>
-      </div>
+    <div>
+      <h2>Login Page</h2>
+
+      <form onSubmit={handleLogin}>
+        <div>
+          <label>Email:</label>
+          <input type="email" onChange={(e) => setEmail(e.target.value)} required />
+        </div>
+
+        <br />
+
+        <div>
+          <label>Password:</label>
+          <input type="password" onChange={(e) => setPassword(e.target.value)} required />
+        </div>
+
+        <br />
+
+        <button type="submit">Login</button>
+      </form>
+
+      <p>
+        Create an account? <Link to="/signup">Signup</Link>
+      </p>
     </div>
   );
 };
